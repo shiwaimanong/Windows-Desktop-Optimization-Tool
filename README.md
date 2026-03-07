@@ -4,10 +4,8 @@
 
 * 自动登录用户密码都是 `m` 的用户
 * 禁用注销,锁定,休眠,睡眠
-* 禁用windows自动更新
-* 关闭 Microsoft Defender 防病毒, 关闭实时保护, 禁用 "打开行为监视", 禁用 "监视计算机上的文件和程序活动"
-* 关闭防火墙
-* 用户账户控制设置设为“从不”
+* 禁用 windows 自动更新
+* 关闭 安全中心 功能和通知(注意要手动先关闭病毒实时保护)
 
 ---
 
@@ -161,6 +159,7 @@ The core optimization script that applies various performance and resource optim
 | `Edge` | Optimize Microsoft Edge settings | Medium | ⚠️ May affect browsing |
 | `RemoveLegacyIE` | Remove Internet Explorer | High | ⚠️ Irreversible |
 | `RemoveOneDrive` | Remove OneDrive integration | High | ⚠️ Affects file sync |
+| `DisableSecurityCenter` | Disable Windows Security Center & Defender | High | ⚠️ Disables Protection |
 
 ### Usage Examples
 

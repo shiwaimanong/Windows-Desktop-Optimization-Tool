@@ -71,7 +71,7 @@ Param (
     $Optimizations,
 
     [Parameter()]
-    [ValidateSet('All', 'Edge', 'RemoveLegacyIE', 'RemoveOneDrive')]
+    [ValidateSet('All', 'Edge', 'RemoveLegacyIE', 'RemoveOneDrive', 'DisableSecurityCenter')]
     [String[]]
     $AdvancedOptimizations,
 
@@ -334,6 +334,13 @@ PROCESS {
     If ($AdvancedOptimizations -contains "RemoveOneDrive" -or $AdvancedOptimizations -contains "All")
     {
         Remove-WDOTRemoveOneDrive
+    }
+    #endregion
+
+    #region Disable Security Center
+    If ($AdvancedOptimizations -contains "DisableSecurityCenter" -or $AdvancedOptimizations -contains "All")
+    {
+        Disable-WDOTSecurityCenter
     }
     #endregion
 
