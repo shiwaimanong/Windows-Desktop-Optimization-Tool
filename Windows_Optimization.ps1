@@ -66,7 +66,7 @@ Param (
     [ArgumentCompleter( { Get-ChildItem $PSScriptRoot\Configurations -Directory | Select-Object -ExpandProperty Name } )]
     [string]$ConfigProfile,
 
-    [ValidateSet('All', 'WindowsMediaPlayer', 'AppxPackages', 'ScheduledTasks', 'DefaultUserSettings', 'LocalPolicy', 'Autologgers', 'Services', 'NetworkOptimizations', 'DiskCleanup')]
+    [ValidateSet('All', 'WindowsMediaPlayer', 'AppxPackages', 'ScheduledTasks', 'DefaultUserSettings', 'LocalPolicy', 'Autologgers', 'Services', 'NetworkOptimizations', 'DiskCleanup', 'PowerSettings')]
     [String[]]
     $Optimizations,
 
@@ -124,7 +124,7 @@ BEGIN
         New-ItemProperty -Path $KeyPath -Name $LastRun -Value $LastRunValue | Out-Null
     }
 
-    $EventSources = @('WDOT', 'WindowsMediaPlayer', 'AppxPackages', 'ScheduledTasks', 'DefaultUserSettings', 'Autologgers', 'Services', 'LocalPolicy', 'NetworkOptimizations', 'AdvancedOptimizations', 'DiskCleanup')
+    $EventSources = @('WDOT', 'WindowsMediaPlayer', 'AppxPackages', 'ScheduledTasks', 'DefaultUserSettings', 'Autologgers', 'Services', 'LocalPolicy', 'NetworkOptimizations', 'AdvancedOptimizations', 'DiskCleanup', 'PowerSettings')
     If (-not([System.Diagnostics.EventLog]::SourceExists("WDOT")))
     {
         # All WDOT main function Event ID's [1-9]
@@ -313,6 +313,13 @@ PROCESS {
     If ($Optimizations -contains "LocalPolicy" -or $Optimizations -contains "All")
     {
         Optimize-WDOTLocalPolicySettings
+    }
+    #endregion
+
+    #region Power Settings
+    If ($Optimizations -contains "PowerSettings" -or $Optimizations -contains "All")
+    {
+        Optimize-WDOTPowerSettings
     }
     #endregion
 
