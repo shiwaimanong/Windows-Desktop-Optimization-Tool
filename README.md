@@ -2,7 +2,7 @@
 
 ## 后期修改
 
-* 自动登录用户密码都是 `m` 的用户
+* 自动登录用户密码都是 `v` 的用户 , 如果需要修改 Configurations/w11/PolicyRegSettings.json 中的 `DefaultUserName` 和 `DefaultPassword` .
 * 禁用注销,锁定,休眠,睡眠
 * 禁用 windows 自动更新
 * 关闭 安全中心 功能和通知(注意要手动先关闭病毒实时保护)

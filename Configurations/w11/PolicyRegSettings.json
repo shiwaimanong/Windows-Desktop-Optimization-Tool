@@ -1039,14 +1039,14 @@
         "RegItemPath": "HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon",
         "RegItemValueName": "DefaultUserName",
         "RegItemValueType": "String",
-        "RegItemValue": "m",
+        "RegItemValue": "v",
         "OptimizationState": "Apply"
     },
     {
         "RegItemPath": "HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon",
         "RegItemValueName": "DefaultPassword",
         "RegItemValueType": "String",
-        "RegItemValue": "m",
+        "RegItemValue": "v",
         "OptimizationState": "Apply"
     },
     {
